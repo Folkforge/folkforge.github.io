@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Obsidian]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>Obsidian</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 10:39:01 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 10:39:01 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Example Page]]></title><description><![CDATA[ 
- ]]></description><link>asset-list\example-page.html</link><guid isPermaLink="false">Asset List/Example Page.md</guid><pubDate>Sun, 11 Aug 2024 10:38:04 GMT</pubDate></item><item><title><![CDATA[Example page]]></title><description><![CDATA[ 
- ]]></description><link>meeting-notes\example-page.html</link><guid isPermaLink="false">Meeting  Notes/Example page.md</guid><pubDate>Sun, 11 Aug 2024 10:38:11 GMT</pubDate></item><item><title><![CDATA[Example Page]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Obsidian]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>Obsidian</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 11 Aug 2024 10:43:55 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 11 Aug 2024 10:43:55 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[8-8-24]]></title><description><![CDATA[ 
+ <br>**<br>Studio Folkforge<br>Project kick-off<br><img title="horizontal line" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcrui36gPZs_ijAv4RQww7mxQc6PTUk-CkHGXbdQ2Xwcks4aEbenTMea21b7UO_I6nPmdTrly6hOiymShSixYphCk7mDgExQeDMQwrWQrbUA9SYHIQ0oKqSs3G092_Bn_EZk1h8RDONLtdnmTCg7mehU1kZ?key=1tL0lR3slenjPjabPXvAMA" referrerpolicy="no-referrer"><br>08 AUGUST 2024<br><br>Taisto, Johanna, Luna, Martin, Jozefynn<br>Note taker: Taisto<br>
+Next note taker: Luna<br><br><br>
+<br>
+We start pre-production on the 12th. [<a rel="noopener" class="external-link" href="https://stepico.com/blog/game-development-stages/" target="_blank">https://stepico.com/blog/game-development-stages/</a>  
+  ](<a rel="noopener" class="external-link" href="https://stepico.com/blog/game-development-stages/" target="_blank">https://stepico.com/blog/game-development-stages/</a>)
+
+<br>
+Sort out Studio Folkforge Google Drive further, creating more folders and organizing their contents for pre-production (asset lists etc), as well as sorting meeting notes.
+
+<br>
+Meeting notes arranged per month, 1 document per meeting<br>
+
+
+<br>
+We have decided to set up Miro and HacknPlan for project tracking.
+
+<br>
+Create lists for:
+
+<br>
+Priority of gameplay and mechanics that NEED to be in and cannot be scrapped; these are the ESSENCE of the game. Minimal viable product.<br>
+
+
+<br>
+Another list of things that are GOOD to have, can be scrapped and are not essential, etc.&nbsp;
+
+<br>
+Gameplay/mechanism documentation (GDD)<br>
+
+
+<br>
+Finish up the trailer plan and plan what new content it needs, what to “fake” (animations etc)<br>
+
+
+<br>
+Art tests, rough concepts, storyboarding, story scripts, characters<br>
+
+
+<br>
+Contracts of IP ownership and other things, store them on the Drive.<br>
+
+
+<br>
+Think ahead for possible Nintendo Switch port (no word on dev account as of yet)
+
+<br><br>
+<br>Sprints start on mondays at 9:00 and end with a retro at 17:00.&nbsp;<br>
+
+<br><br>
+<br>
+Team leans towards a trailer that starts off with some story background, and then shows gameplay elements; initial trailer script done, but will need further editing once pre-production kicks in;
+
+<br>
+Sci-Fi or space station environment, that has indications of raccoons being from outer space/being super smart, posters of raccoons / tv that has a report of a stolen portal device on the news.<br>
+
+
+<br>
+Raccoons playing with a portal device/machine, showing portals with different locations. The raccoons hit the button too hard and get sucked into a random portal.<br>
+
+
+<br>
+A view of a street. A portal appears. A bunch of raccoons fall out of it wearing different outfits. The portal device falls out of the portal, bonks one on the head and breaks. The raccoons are busy freaking out while in the distance we see parts of different areas being teleported/appearing (for example suddenly there's a piece of Japan in the middle of London).  
+  Camera moves back to the raccoons looking horrified, "uh oh we fucked up".  
+
+<br>
+After this we continue with snippets of gameplay;  
+
+<br>
+Have at least 1 or 2 NPC's showing you pick up a quest.<br>
+"Add a lion that makes you question your sexuality" (in words of Jozefynn), referencing the Hades trailer?<br>
+
+
+<br>
+Bicycle<br>
+
+
+<br>
+Smell mechanic ( if you get too smelly hide in trash)<br>
+
+
+<br>
+Raccoons in a trenchcoat robbing a bank<br>
+
+
+<br>
+Interacting with environment (wearing traffic cone on head, other silly things)<br>
+
+
+<br>
+Bring forth multiplayer possibilities
+
+<br><br>
+<br>TikTok, Youtube, Facebook/Instagram&nbsp;<br>
+
+<br>Twitter is already done for TRG and Folkforge both.
+<br><br>We begin the pre-production stage with our first meeting and the start of the first sprint on the 12th of August, at 9 am.  <br>Gameplay/mechanism documentation, finish up the trailer plan, sort out asset lists/other documentation and planning, look into art styles; refer to today’s meeting notes.<br>**]]></description><link>meeting-notes\8-8-24.html</link><guid isPermaLink="false">Meeting  Notes/8-8-24.md</guid><pubDate>Sun, 11 Aug 2024 10:43:17 GMT</pubDate><enclosure url="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcrui36gPZs_ijAv4RQww7mxQc6PTUk-CkHGXbdQ2Xwcks4aEbenTMea21b7UO_I6nPmdTrly6hOiymShSixYphCk7mDgExQeDMQwrWQrbUA9SYHIQ0oKqSs3G092_Bn_EZk1h8RDONLtdnmTCg7mehU1kZ?key=1tL0lR3slenjPjabPXvAMA" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcrui36gPZs_ijAv4RQww7mxQc6PTUk-CkHGXbdQ2Xwcks4aEbenTMea21b7UO_I6nPmdTrly6hOiymShSixYphCk7mDgExQeDMQwrWQrbUA9SYHIQ0oKqSs3G092_Bn_EZk1h8RDONLtdnmTCg7mehU1kZ?key=1tL0lR3slenjPjabPXvAMA"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Example Page]]></title><description><![CDATA[ 
+ ]]></description><link>asset-list\example-page.html</link><guid isPermaLink="false">Asset List/Example Page.md</guid><pubDate>Sun, 11 Aug 2024 10:38:04 GMT</pubDate></item><item><title><![CDATA[Example Page]]></title><description><![CDATA[ 
  ]]></description><link>programming-bible\example-page.html</link><guid isPermaLink="false">Programming Bible/Example Page.md</guid><pubDate>Sun, 11 Aug 2024 10:38:18 GMT</pubDate></item></channel></rss>
