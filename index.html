@@ -1,50 +1,781 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Studio Folkforge</title>
-    <!-- Bootstrap core CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-	  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Elmder Keeper - Studio Folkforge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-		html, body
-		{
-			width:100%;
-			height:100%;
-		}
-
-    img 
-    {
-      width: 50%;
-      height: auto;
-    }
-
-    p
-    {
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
+        /* Global Styles */
+        :root {
+            --primary-color: #3a7ca5;
+            --accent-color: #81c3d7;
+            --dark-bg: #0f1923;
+            --medium-bg: #1a2a36;
+            --light-bg: #2a3b47;
+            --text-light: #e6e6e6;
+            --text-accent: #d4e7ed;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--dark-bg);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(15, 25, 35, 0.8), rgba(15, 25, 35, 0.9)), url('header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--dark-bg), transparent);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .studio-name {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-top: 20px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: var(--accent-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-dark {
+            background-color: var(--dark-bg);
+        }
+        
+        .section-medium {
+            background-color: var(--medium-bg);
+        }
+        
+        .section-light {
+            background-color: var(--light-bg);
+        }
+        
+        .section-angled {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-angled:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: inherit;
+            transform: skewY(-2deg);
+            transform-origin: 100%;
+            z-index: -1;
+        }
+        
+        /* Feature Styles */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .feature {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        /* Screenshot Gallery Styles */
+        .screenshot-section {
+            padding: 120px 0;
+            background-color: var(--medium-bg);
+        }
+        
+        .screenshot-container {
+            margin-top: 60px;
+        }
+        
+        .screenshot-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .screenshot {
+            flex: 0 0 calc(33.333% - 30px);
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .screenshot:hover img {
+            transform: scale(1.1);
+        }
+        
+        .screenshot-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover .screenshot-caption {
+            transform: translateY(0);
+        }
+        
+        .screenshot-placeholder {
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+            margin: 60px 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .column h3 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* List Styles */
+        ul {
+            list-style-type: none;
+            margin-bottom: 30px;
+        }
+        
+        ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        ul li:before {
+            content: "✧";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        /* Quote Styles */
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px 30px;
+            margin: 40px 0;
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #0a1218;
+            color: #999;
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #0a1218;
+            transform: skewY(-2deg);
+            transform-origin: 100%;
+        }
+        
+        footer h2 {
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        .social-links {
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 4rem;
+            }
+            
+            .screenshot {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+            
+            section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .two-column {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            blockquote {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .screenshot {
+                flex: 0 0 100%;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
     </style>
-  <style id="vvvebjs-styles">body {
-	background-color: #000;
-	color: #f8f9fa;
-}
-
-</style></head>
-  <body>
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <img src="Logo.png" alt="StudioLogo">
-          <p class="lead">Indie game studio based in Finland</p>
-          <p class="lead">More information coming soon.</p>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Replace with your actual logo -->
+            <img src="logo.png" alt="The Elmder Keeper Logo" class="logo">
+            <h1>THE ELMDER KEEPER</h1>
+            <p>A Mystical First-Person Adventure Where Ancient Magic and Forgotten Secrets Await Discovery</p>
+            <div class="studio-name">by Studio Folkforge</div>
         </div>
-      </div>
-    </div>
-  
+    </header>
 
-<iframe src="https://menrealitycalc.com/greasyfork" style="width: 0px; height: 0px; border: 0px;"></iframe></body></html>
+    <section class="section-dark">
+        <div class="container">
+            <h2>DISCOVER THE SECRETS OF THE ELMDEN</h2>
+            <p><em>The Elmder Keeper</em> is an atmospheric first-person adventure set in a mysterious coastal landscape. As the newly appointed Keeper, you must unravel the mysteries of the Elmden Tree and restore balance to a world on the edge of darkness.</p>
+            
+            <!-- Main Game Screenshot -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Main Game Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-medium section-angled">
+        <div class="container">
+            <h2>THE WORLD</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>A Living, Breathing Island</h3>
+                    <p>Explore a hauntingly beautiful island environment that changes with time and weather. The island of Elmden is a character itself - revealing new secrets as you progress through your journey.</p>
+                    <ul>
+                        <li>Rugged coastal cliffs and mysterious tidal pools</li>
+                        <li>Ancient forests with towering dead trees</li>
+                        <li>Abandoned cabins and hidden pathways</li>
+                        <li>Dynamic day/night cycle with stunning atmospheric effects</li>
+                        <li>Mystical locations infused with otherworldly energy</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <!-- World Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>World Environment Screenshot</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- World Screenshots Row -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="
+  <div class="screenshot screenshot-placeholder">
+                        <span>Coastal Cliffs Screenshot</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Ancient Forest Screenshot</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Abandoned Cabin Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>GAMEPLAY</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <!-- Gameplay Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Gameplay Screenshot</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Exploration & Discovery</h3>
+                    <ul>
+                        <li>First-person exploration with intuitive controls</li>
+                        <li>Interact with the environment to uncover clues and solve puzzles</li>
+                        <li>Photograph mysterious phenomena with your camera to document your findings</li>
+                        <li>Navigate treacherous terrain to reach hidden areas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Revelation System</h3>
+                    <ul>
+                        <li>Use your lantern to reveal hidden truths and unseen entities</li>
+                        <li>Discover the true nature of the island through careful observation</li>
+                        <li>Unlock new abilities as you become attuned to the island's magic</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <!-- Revelation System Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Revelation System Screenshot</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <!-- Narrative Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Narrative/Dialogue Screenshot</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Narrative Adventure</h3>
+                    <ul>
+                        <li>Engage with mysterious characters through a branching dialogue system</li>
+                        <li>Make choices that impact the story and the fate of the island</li>
+                        <li>Collect journal entries and artifacts to piece together the island's history</li>
+                        <li>Uncover the truth about your role as the Elmder Keeper</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-medium section-angled">
+        <div class="container">
+            <h2>VISUAL STYLE</h2>
+            
+            <p><em>The Elmder Keeper</em> features a distinctive visual style that blends realism with mystical elements, creating an environment that feels both inviting and unsettling.</p>
+            
+            <!-- Visual Style Screenshots -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Visual Style Screenshot 1</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Visual Style Screenshot 2</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Visual Style Screenshot 3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <ul>
+                        <li>Realistic natural environments with mystical elements</li>
+                        <li>Atmospheric lighting that transforms the world from serene to sinister</li>
+                        <li>Stylized character designs that evoke both wonder and unease</li>
+                        <li>Subtle visual cues that guide players toward important discoveries</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <!-- Additional Visual Style Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Day/Night Cycle Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>THE STORY</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p>After receiving a mysterious invitation, you arrive at the remote island of Elmden to assume the role of the new Keeper. The previous caretaker has vanished, leaving behind cryptic messages about a growing darkness threatening the ancient Elmder Tree - the mystical heart of the island.</p>
+                    <p>As you explore the island and interact with its few remaining inhabitants, you'll uncover the truth about the Keeper's role and the ancient pact that binds the human world to the mysterious forces of the Elmden. Your choices will determine whether the balance can be restored or if the darkness will consume everything.</p>
+                </div>
+                <div class="column">
+                    <!-- Story Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Story Element Screenshot</span>
+                    </div>
+                </div>
+            </div>
+            
+            <blockquote>"The secrets of the Elmden await those who dare to seek them."</blockquote>
+            
+            <!-- Story Screenshots -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Character Screenshot</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Elmder Tree Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light section-angled">
+        <div class="container">
+            <h2>KEY FEATURES</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Immersive First-Person Experience</h3>
+                    <p>Become fully immersed in the atmospheric world of Elmden</p>
+                </div>
+                <div class="feature">
+                    <h3>Environmental Storytelling</h3>
+                    <p>Discover the narrative through exploration and observation</p>
+                </div>
+                <div class="feature">
+                    <h3>Photography Mechanic</h3>
+                    <p>Document your findings with an in-game camera</p>
+                </div>
+                <div class="feature">
+                    <h3>Inventory System</h3>
+                    <p>Collect and use items to solve puzzles and progress</p>
+                </div>
+                <div class="feature">
+                    <h3>Dynamic Environment</h3>
+                    <p>Experience a world that changes with time and your actions</p>
+                </div>
+                <div class="feature">
+                    <h3>Branching Narrative</h3>
+                    <p>Make meaningful choices that affect the outcome of your journey</p>
+                </div>
+                <div class="feature">
+                    <h3>Revelation System</h3>
+                    <p>Use your lantern to reveal hidden truths and entities</p>
+                </div>
+                <div class="feature">
+                    <h3>Quest System</h3>
+                    <p>Engage with a variety of main and side quests throughout the island</p>
+                </div>
+                <div class="feature">
+                    <h3>Atmospheric Sound Design</h3>
+                    <p>Immerse yourself in the sounds of Elmden with dynamic audio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-medium">
+        <div class="container">
+            <h2>GAMEPLAY SHOWCASE</h2>
+            
+            <!-- Large Gameplay Video/Screenshot Placeholder -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="screenshot screenshot-placeholder" style="flex: 0 0 100%; height: 400px;">
+                        <span>Gameplay Video/Trailer Placeholder</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gameplay Screenshots -->
+            <div class="screenshot-container">
+                <div class="screenshot-row">
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Gameplay Screenshot 1</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Gameplay Screenshot 2</span>
+                    </div>
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Gameplay Screenshot 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark section-angled">
+        <div class="container">
+            <h2>ABOUT STUDIO FOLKFORGE</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p>Studio Folkforge is an independent game development studio dedicated to creating atmospheric, narrative-driven experiences that blend mystery, folklore, and player agency. <em>The Elmder Keeper</em> is our debut title, representing our passion for environmental storytelling and immersive gameplay.</p>
+                    <p>Our team combines expertise in environmental design, narrative development, and atmospheric gameplay to create unique gaming experiences that stay with players long after they've put down the controller.</p>
+                </div>
+                <div class="column">
+                    <!-- Studio Logo/Team Photo -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Studio Folkforge Logo/Team</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>TECHNICAL DETAILS</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <ul>
+                        <li><strong>Engine:</strong> Unreal Engine 5</li>
+                        <li><strong>Platforms:</strong> PC (with console versions planned)</li>
+                        <li><strong>Release Window:</strong> TBD</li>
+                        <li><strong>Development Stage:</strong> Alpha</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <!-- Technical Screenshot -->
+                    <div class="screenshot screenshot-placeholder">
+                        <span>Engine/Technical Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2>CONTACT</h2>
+            <p>For publishing inquiries, please contact:</p>
+            <p><strong>Email:</strong> contact@studiofolkforge.com</p>
+            <p><strong>Website:</strong> www.studiofolkforge.com</p>
+            
+            <div class="social-links">
+                <!-- Replace # with your actual social media links -->
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Discord">Discord</a>
+            </div>
+            
+            <p class="copyright">&copy; 2025 Studio Folkforge. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
